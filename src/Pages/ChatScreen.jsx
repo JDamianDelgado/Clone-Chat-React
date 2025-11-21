@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
-import { ContactList } from "../Components/ContactList";
+import { ContactList } from "../Components/contactList.jsx";
 import { getContactos } from "../Services/ContactoServices";
 import { Chat } from "../Components/chat";
-import { AddNewContact } from "../Components/NewContacto";
 
 export const ChatScreen = () => {
   const [loading, setLoading] = useState(true);
