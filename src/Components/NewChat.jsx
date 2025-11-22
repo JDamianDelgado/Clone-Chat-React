@@ -1,6 +1,7 @@
 import { UseChat } from "../Hooks/UseChat";
 
 export function NewChat({ newMessage, contacto }) {
+  //hok nuevo chat
   const { chat, handleChange, handleSubmit } = UseChat(newMessage, contacto);
 
   return (

@@ -135,6 +135,14 @@ body {
   cursor: pointer;
 }
 
+.barraLateral {
+  overflow-y: scroll;
+  height: 90vh;
+  margin-top: 0.8rem;
+}
+.barraLateral::-webkit-scrollbar {
+  display: none;
+}
 .contactList {
   max-width: 16vw;
   min-width: 16vw;

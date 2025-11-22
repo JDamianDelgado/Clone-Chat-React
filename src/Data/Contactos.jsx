@@ -114,8 +114,7 @@ export const dataInitial = [
         id: 1,
         autor: "otro",
         creado: "13:00",
-        texto:
-          "loremimpsuaskljfhajkhflk haskljfh alksfh aklsfhkla hkfhajlk fklas fjklasjkfhakjlsh...",
+        texto: "loremimpsuaskljfhajkhflk...",
         status: "leido",
         hora: "13:01",
       },
@@ -123,17 +122,12 @@ export const dataInitial = [
         id: 2,
         autor: "yo",
         creado: "13:05",
-        texto:
-          "loremimpsuaskljfhajkhflk haskljfh alksfh aklsfhkla hkfhajlk fklas f...",
+        texto: "loremimpsuaskljfhajkhflk...",
         status: "leido",
         hora: "13:06",
       },
     ],
   },
-
-  // -------------------------
-  // NUEVOS CONTACTOS AGREGADOS
-  // -------------------------
 
   {
     id: 6,
@@ -272,36 +266,187 @@ export const dataInitial = [
       },
     ],
   },
+
+  // -------------------------
+  // CONTACTOS NUEVOS HASTA ID 20
+  // -------------------------
+
   {
     id: 11,
-    nombre: "Valentina",
-    ultimaConexion: "En línea",
-    profilePhoto: "https://randomuser.me/api/portraits/women/10.jpg",
+    nombre: "Elena",
+    ultimaConexion: "Hace 1 hora",
+    profilePhoto: "https://randomuser.me/api/portraits/women/11.jpg",
+    conectado: false,
+    mensajes: [
+      {
+        id: 1,
+        autor: "otro",
+        creado: "09:00",
+        texto: "¿Tenés un minuto?",
+        status: "entregado",
+        hora: "09:00",
+      },
+    ],
+  },
+
+  {
+    id: 12,
+    nombre: "Rodolfo",
+    ultimaConexion: "Hoy 11:20",
+    profilePhoto: "https://randomuser.me/api/portraits/men/12.jpg",
     conectado: true,
     mensajes: [
       {
         id: 1,
         autor: "yo",
-        creado: "18:40",
-        texto: "¿Llegaste bien?",
+        creado: "10:00",
+        texto: "¿Todo ok?",
+        status: "leido",
+        hora: "10:01",
+      },
+    ],
+  },
+
+  {
+    id: 13,
+    nombre: "Camila",
+    ultimaConexion: "Ayer",
+    profilePhoto: "https://randomuser.me/api/portraits/women/13.jpg",
+    conectado: false,
+    mensajes: [
+      {
+        id: 1,
+        autor: "otro",
+        creado: "20:00",
+        texto: "Hablamos mañana",
         status: "entregado",
-        hora: "18:41",
+        hora: "20:01",
       },
+    ],
+  },
+
+  {
+    id: 14,
+    nombre: "Federico",
+    ultimaConexion: "Hace 3 horas",
+    profilePhoto: "https://randomuser.me/api/portraits/men/14.jpg",
+    conectado: false,
+    mensajes: [
       {
-        id: 2,
-        autor: "otro",
-        creado: "18:42",
-        texto: "Sí, recién.",
-        status: "leido",
-        hora: "18:42",
+        id: 1,
+        autor: "yo",
+        creado: "15:10",
+        texto: "Te llamo más tarde",
+        status: "entregado",
+        hora: "15:11",
       },
+    ],
+  },
+
+  {
+    id: 15,
+    nombre: "Brenda",
+    ultimaConexion: "En línea",
+    profilePhoto: "https://randomuser.me/api/portraits/women/15.jpg",
+    conectado: true,
+    mensajes: [
       {
-        id: 3,
+        id: 1,
         autor: "otro",
-        creado: "18:43",
-        texto: "Gracias por preguntar 🧡",
+        creado: "18:00",
+        texto: "Ya llegué 🙌",
         status: "leido",
-        hora: "18:43",
+        hora: "18:00",
+      },
+    ],
+  },
+
+  {
+    id: 16,
+    nombre: "Lucas",
+    ultimaConexion: "Hace 30 min",
+    profilePhoto: "https://randomuser.me/api/portraits/men/16.jpg",
+    conectado: false,
+    mensajes: [
+      {
+        id: 1,
+        autor: "yo",
+        creado: "17:15",
+        texto: "¿Seguís trabajando?",
+        status: "entregado",
+        hora: "17:16",
+      },
+    ],
+  },
+
+  {
+    id: 17,
+    nombre: "Julieta",
+    ultimaConexion: "Hoy 07:12",
+    profilePhoto: "https://randomuser.me/api/portraits/women/17.jpg",
+    conectado: false,
+    mensajes: [
+      {
+        id: 1,
+        autor: "otro",
+        creado: "06:40",
+        texto: "Buen día 🌞",
+        status: "leido",
+        hora: "06:40",
+      },
+    ],
+  },
+
+  {
+    id: 18,
+    nombre: "Hernán",
+    ultimaConexion: "Ayer 23:50",
+    profilePhoto: "https://randomuser.me/api/portraits/men/18.jpg",
+    conectado: false,
+    mensajes: [
+      {
+        id: 1,
+        autor: "yo",
+        creado: "23:00",
+        texto: "Todo bien por acá",
+        status: "entregado",
+        hora: "23:00",
+      },
+    ],
+  },
+
+  {
+    id: 19,
+    nombre: "Daniela",
+    ultimaConexion: "Hace 15 min",
+    profilePhoto: "https://randomuser.me/api/portraits/women/19.jpg",
+    conectado: true,
+    mensajes: [
+      {
+        id: 1,
+        autor: "otro",
+        creado: "12:45",
+        texto: "¿Pasás por casa?",
+        status: "leido",
+        hora: "12:46",
+      },
+    ],
+  },
+
+  {
+    id: 20,
+    nombre: "Tomás",
+    ultimaConexion: "Hoy 14:00",
+    profilePhoto: "https://randomuser.me/api/portraits/men/20.jpg",
+    conectado: false,
+    mensajes: [
+      {
+        id: 1,
+        autor: "yo",
+        creado: "13:45",
+        texto: "Mañana te aviso",
+        status: "entregado",
+        hora: "13:45",
       },
     ],
   },

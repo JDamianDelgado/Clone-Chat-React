@@ -1,54 +1,17 @@
-import { useEffect, useState } from "react";
 import { ContactList } from "../Components/ContactList";
-import { getContactos } from "../Services/ContactoServices";
 import { Chat } from "../Components/Chat";
+import { UseScreen } from "../Hooks/UseScreen";
 
 export const ChatScreen = () => {
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-  const [contactos, setContactos] = useState([]);
-  const [selected, setSelected] = useState(null);
-  function loadContactos() {
-    const contacts = getContactos();
-    setLoading(true);
-    try {
-      setContactos(contacts);
-      setLoading(false);
-    } catch (e) {
-      setError(e);
-      setLoading(false);
-    } finally {
-      setLoading(false);
-    }
-  }
-
-  //   nuevo mensaje
-  function handleNewMessage(newMsg) {
-    setContactos((prev) =>
-      prev.map((contact) =>
-        contact.id === selected.id
-          ? {
-              ...contact,
-              mensajes: [...contact.mensajes, newMsg],
-            }
-          : contact
-      )
-    );
-
-    setSelected((prev) => ({
-      ...prev,
-      mensajes: [...prev.mensajes, newMsg],
-    }));
-  }
-
-  //   nuevo contacto
-  function handleAddNewContact(contactoNuevo) {
-    setContactos((prev) => [...prev, contactoNuevo]);
-  }
-
-  useEffect(() => {
-    loadContactos();
-  }, []);
+  const {
+    loading,
+    error,
+    contactos,
+    selected,
+    setSelected,
+    handleAddNewContact,
+    handleNewMessage,
+  } = UseScreen();
 
   if (loading) {
     return <p>Cargando...</p>;

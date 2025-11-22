@@ -2,6 +2,7 @@ import { AddNewContact } from "./NewContacto";
 import { UseContact } from "../Hooks/UseContact";
 
 export function ContactList({ contactos, select, handleAddNewContact }) {
+  //hook contacto y search
   const { searchContact, cleanSearch, filter, search } = UseContact(contactos);
 
   return (
@@ -21,25 +22,30 @@ export function ContactList({ contactos, select, handleAddNewContact }) {
 
         <AddNewContact newContact={handleAddNewContact} className="formAdd" />
       </div>
-      {filter.map((contacto) => (
-        <div
-          key={contacto.id}
-          onClick={() => select(contacto)}
-          className="contactList"
-        >
-          <img
-            src={contacto.profilePhoto}
-            alt={contacto.nombre}
-            className={
-              contacto.conectado === true ? "imgConectado" : "imgDesconectado"
-            }
-          />
-          <div className="contactListData">
-            <h3>{contacto.nombre}</h3>
-            <p>{contacto.mensajes[contacto.mensajes.length - 1]?.texto}</p>{" "}
+
+      <div className="barraLateral">
+        {filter.map((contacto) => (
+          <div
+            key={contacto.id}
+            onClick={() => select(contacto)}
+            className="contactList"
+          >
+            <img
+              src={contacto.profilePhoto}
+              alt={contacto.nombre}
+              className={
+                contacto.conectado === true ? "imgConectado" : "imgDesconectado"
+              }
+            />
+            <div className="contactListData">
+              <h3>{contacto.nombre}</h3>
+              <p>
+                {contacto.mensajes[contacto.mensajes.length - 1]?.texto}
+              </p>{" "}
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 }
