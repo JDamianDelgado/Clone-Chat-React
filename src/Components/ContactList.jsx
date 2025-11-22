@@ -1,32 +1,8 @@
-import { useEffect, useState } from "react";
 import { AddNewContact } from "./NewContacto";
+import { UseContact } from "../Hooks/UseContact";
 
 export function ContactList({ contactos, select, handleAddNewContact }) {
-  const [filter, setFilter] = useState(contactos);
-  const [search, setSearch] = useState("");
-  useEffect(() => {
-    setFilter(contactos);
-  }, [contactos]);
-
-  //filtro de contactos busqueda
-  function searchContact(event) {
-    event.preventDefault();
-    const value = event.target.value.toLowerCase();
-    setSearch(value);
-    if (!value) {
-      setFilter(contactos);
-      return;
-    }
-    const findContacto = contactos.filter((contact) =>
-      contact.nombre.toLowerCase().includes(value)
-    );
-    setFilter(findContacto);
-  }
-
-  function cleanSearch() {
-    setFilter(contactos);
-    setSearch("");
-  }
+  const { searchContact, cleanSearch, filter, search } = UseContact(contactos);
 
   return (
     <div>

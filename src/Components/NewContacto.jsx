@@ -1,67 +1,9 @@
-import { useState } from "react";
+import { UseNewContact } from "../Hooks/UseContact";
 
 export function AddNewContact({ newContact }) {
-  const [form, setForm] = useState(() => ({
-    id: Date.now(),
-    nombre: "",
-    profilePhoto: "",
-    ultimaConexion: new Date().toLocaleTimeString([], {
-      hour: "2-digit",
-      minute: "2-digit",
-    }),
-    conectado: true,
-    mensajes: [],
-  }));
-  const [view, setView] = useState(false);
-
-  function handleChange(event) {
-    const { name, value } = event.target;
-    setForm({
-      ...form,
-      [name]: value,
-    });
-  }
-
-  function handleSubmit(event) {
-    event.preventDefault();
-    if (!form.nombre.trim()) {
-      return alert("El nombre no puede estar vacio ");
-    }
-    const contactoFinal = {
-      ...form,
-      profilePhoto:
-        form.profilePhoto.trim() ||
-        "https://res.cloudinary.com/demo/image/upload/d_avatar.png/non_existing_id.png",
-    };
-    newContact(contactoFinal);
-    setView(false);
-    setForm({
-      id: Date.now(),
-      nombre: "",
-      profilePhoto: "",
-      ultimaConexion: new Date().toLocaleTimeString([], {
-        hour: "2-digit",
-        minute: "2-digit",
-      }),
-      conectado: Math.random() < 0.5,
-      mensajes: [],
-    });
-  }
-
-  function handleClose() {
-    setView(false);
-    setForm({
-      id: Date.now(),
-      nombre: "",
-      profilePhoto: "",
-      ultimaConexion: new Date().toLocaleTimeString([], {
-        hour: "2-digit",
-        minute: "2-digit",
-      }),
-      conectado: Math.random() < 0.5,
-      mensajes: [],
-    });
-  }
+  //hook nuevo contcto
+  const { handleChange, handleClose, handleSubmit, setView, view, form } =
+    UseNewContact(newContact);
 
   return (
     <div className="contenedorAdd">
