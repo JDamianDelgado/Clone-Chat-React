@@ -1,6 +1,9 @@
 import { NewChat } from "./NewChat";
 
 export function Chat({ contacto, handleNewMessage }) {
+  if (!contacto) {
+    return <div className="chatVacio">Selecciona un contacto</div>;
+  }
   return (
     <div className="chat">
       <div className="chatHeader">
