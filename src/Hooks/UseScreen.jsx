@@ -6,7 +6,6 @@ export function UseScreen() {
   const [error, setError] = useState(null);
   const [contactos, setContactos] = useState([]);
   const [selected, setSelected] = useState(null);
-
   function loadContactos() {
     const contactosList = getContactos();
     setLoading(true);
@@ -20,6 +19,7 @@ export function UseScreen() {
       setLoading(false);
     }
   }
+
   //uevo msj
   function handleNewMessage(newMsg) {
     setContactos((prev) =>

@@ -328,10 +328,10 @@ body {
 }
 
 .contenedorForm {
+  justify-content: space-around;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  width: 100%;
   align-items: center;
   color: white;
 }

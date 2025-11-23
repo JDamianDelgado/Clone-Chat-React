@@ -2,7 +2,10 @@ import { UseChat } from "../Hooks/UseChat";
 
 export function NewChat({ newMessage, contacto }) {
   //hok nuevo chat
-  const { chat, handleChange, handleSubmit } = UseChat(newMessage, contacto);
+  const { chat, handleChange, handleSubmit, keyEnter } = UseChat(
+    newMessage,
+    contacto
+  );
 
   return (
     <div className="contenedorNewChat">
@@ -12,6 +15,7 @@ export function NewChat({ newMessage, contacto }) {
           name="texto"
           value={chat.texto}
           onChange={handleChange}
+          onKeyDown={keyEnter}
         />
         <button type="submit">Enviar</button>
       </form>
