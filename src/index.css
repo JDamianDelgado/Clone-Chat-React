@@ -2,15 +2,19 @@
 body {
   width: 100%;
   height: 100%;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Space Grotesk", "Outfit", Arial, Helvetica, sans-serif;
   margin: 0;
+  color: #f6f7fb;
+  background: radial-gradient(1200px 600px at 20% 0%, #2a3556 0%, transparent 60%),
+    radial-gradient(900px 600px at 80% 20%, #1a3b4d 0%, transparent 55%),
+    linear-gradient(140deg, #0d111f, #1a2238);
 }
 
 /* Global */
 .contenedorGlobal {
   display: flex;
   margin: 0;
-  background: linear-gradient(40deg, #816a6a, white);
+  background: transparent;
   max-height: 100vh;
   min-height: 100vh;
   overflow-x: hidden;
@@ -30,8 +34,9 @@ body {
 }
 
 .Presentacion img {
-  width: 50%;
+  width: 40%;
   height: auto;
+  filter: drop-shadow(0 16px 30px rgba(0, 0, 0, 0.35));
 }
 
 /* Contactos */
@@ -39,12 +44,16 @@ body {
   display: flex;
   justify-content: center;
   padding: 1rem 4rem;
-  box-shadow: 0 2px 10px rgb(100, 99, 99);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 24px;
   height: 100vh;
   overflow-y: auto;
   overflow-x: hidden;
   width: 15vw;
   min-width: 15vw;
+  margin: 1.2rem;
 }
 
 .contenedorContactos::-webkit-scrollbar {
@@ -69,9 +78,9 @@ body {
 }
 .barraSearch input {
   flex: 1;
-  background: rgba(102, 102, 102, 0.35);
+  background: rgba(0, 0, 0, 0.35);
   border-radius: 2rem;
-  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.18);
   padding: 0.6rem 1rem;
   color: white;
   outline: none;
@@ -82,8 +91,8 @@ body {
   color: rgba(255, 255, 255, 0.6);
 }
 .barraSearch button {
-  background: rgba(255, 255, 255, 0.2);
-  border: none;
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 50%;
   width: 35px;
   height: 35px;
@@ -110,12 +119,16 @@ body {
   align-items: center;
   gap: 0.5rem;
   margin-bottom: 1rem;
+  padding: 0.8rem;
+  border-radius: 16px;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 .formAdd input {
   flex: 1;
-  background: rgba(102, 102, 102, 0.35);
+  background: rgba(0, 0, 0, 0.35);
   border-radius: 2rem;
-  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.18);
   padding: 0.6rem 1rem;
   color: white;
   outline: none;
@@ -124,12 +137,12 @@ body {
 }
 
 .contenedorAdd button {
-  background: #5f8f5f;
+  background: linear-gradient(135deg, #6df2b1, #6bc4ff);
   border: none;
   border-radius: 2rem;
-  box-shadow: 2px 10px 15px rgb(61, 61, 61);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.25);
   padding: 1rem;
-  color: rgb(240, 240, 240);
+  color: #0b1320;
   font-size: 1.2rem;
   margin: 0.2rem;
   cursor: pointer;
@@ -147,24 +160,26 @@ body {
   max-width: 16vw;
   min-width: 16vw;
   display: flex;
-  color: rgb(66, 63, 63);
-  border-radius: 2rem;
-  box-shadow: 2px 10px 15px rgb(61, 61, 61);
+  color: #f6f7fb;
+  border-radius: 20px;
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.25);
   padding: 1rem;
-  background: linear-gradient(30deg, #9c8d8d, white);
-  margin: 1rem;
-  gap: 2rem;
+  background: rgba(0, 0, 0, 0.25);
+  margin: 0.8rem 0;
+  gap: 1rem;
+  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
 }
 
 .contactList:active {
-  box-shadow: 2px 10px 15px rgb(119, 113, 113);
+  transform: scale(0.99);
+  box-shadow: 0 16px 26px rgba(0, 0, 0, 0.3);
 }
 
 .contactList img {
-  width: 6rem;
-  height: 6rem;
+  width: 4.4rem;
+  height: 4.4rem;
   border-radius: 100%;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
 }
 
 .contactListData {
@@ -187,79 +202,85 @@ body {
   width: auto;
   align-items: center;
   flex-direction: column;
-  box-shadow: 0 5px 20px rgb(39, 230, 86);
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 24px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+  margin: 1.2rem 1.2rem 1.2rem 0;
 }
 
 .chatHeader {
   width: 100%;
-  height: 16rem;
-  margin: 0 1rem 2rem 1rem;
+  height: 15rem;
+  margin: 0;
   text-align: center;
-  color: rgb(0, 0, 0);
-  background-color: #57645773;
-  box-shadow: 0 2px 20px rgb(100, 100, 100);
+  color: #f6f7fb;
+  background: linear-gradient(135deg, rgba(107, 196, 255, 0.2), rgba(109, 242, 177, 0.2));
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 24px 24px 0 0;
 }
 
 .chatHeaderUser {
   display: flex;
-  height: 8rem;
-  box-shadow: 0 2px 20px rgb(75, 74, 74);
+  height: 7.5rem;
   align-items: center;
   padding-left: 2rem;
-  padding-right: 5rem;
+  padding-right: 2rem;
   justify-content: space-between;
-  background-color: rgba(254, 255, 255, 0.562);
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: 24px 24px 0 0;
 }
 
 .chatHeaderUser img {
-  height: 6rem;
+  height: 5rem;
   min-width: 4rem;
-  max-width: 6rem;
+  max-width: 5rem;
   border-radius: 50%;
   object-fit: cover;
-  margin: 1rem 5rem 2rem 1rem;
+  margin: 0 2rem 0 0;
 }
 
 .Conectado {
   border-radius: 2rem;
-  padding: 1rem;
-  font-size: large;
-  color: white;
-  background-color: rgba(24, 138, 24, 0.575);
-  box-shadow: 0px 10px 10px rgb(72, 97, 72);
+  padding: 0.6rem 1rem;
+  font-size: 0.95rem;
+  color: #0b1320;
+  background-color: #6df2b1;
+  box-shadow: 0 10px 16px rgba(0, 0, 0, 0.25);
 }
 
 .Desconectado {
   border-radius: 2rem;
-  padding: 1rem;
-  font-size: large;
+  padding: 0.6rem 1rem;
+  font-size: 0.95rem;
   color: white;
-  background-color: #cf0a0ac9;
-  box-shadow: 0px 10px 10px rgb(88, 18, 18);
+  background-color: #ff6b6b;
+  box-shadow: 0 10px 16px rgba(0, 0, 0, 0.25);
 }
 
 .chatHeader p {
-  color: white;
-  font-size: larger;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1rem;
   padding: 0;
 }
 
 .imgConectado {
-  border: solid 5px rgba(33, 150, 33, 0.712);
-  box-shadow: 0px 10px 10px rgb(72, 97, 72);
+  border: solid 3px rgba(109, 242, 177, 0.8);
+  box-shadow: 0 10px 16px rgba(0, 0, 0, 0.25);
 }
 
 .imgDesconectado {
-  border: solid 5px rgba(236, 50, 50, 0.616);
-  box-shadow: 0px 10px 10px rgb(88, 18, 18);
+  border: solid 3px rgba(255, 107, 107, 0.7);
+  box-shadow: 0 10px 16px rgba(0, 0, 0, 0.25);
 }
 
 .chatMensajes {
   padding: 1.5rem;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 14px;
   width: 100%;
   height: 100%;
   overflow-y: auto;
@@ -267,44 +288,45 @@ body {
 }
 
 .mensajeGlobo {
-  max-width: 70%;
+  max-width: 72%;
   min-width: 30%;
   border-radius: 2rem;
   display: flex;
-  margin: 1rem 2rem;
+  margin: 0.8rem 1.6rem;
   flex-direction: row;
   justify-content: space-between;
 }
 
 .globo p {
   display: inline-block;
-  margin: 0 1.5rem 0 1rem;
+  margin: 0 1.2rem 0 1rem;
 }
 
 .globo {
   display: inline-block;
   max-width: max-content;
-  padding: 0.8rem 1.5rem;
-  border-radius: 12px;
+  padding: 0.8rem 1.4rem;
+  border-radius: 16px;
   word-wrap: break-word;
   overflow-wrap: break-word;
   word-break: break-word;
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
 }
 
 .mensajeMeta {
-  color: rgba(31, 48, 38, 0.658);
-  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
   display: flex;
   align-items: center;
   justify-content: end;
 }
 
 .hora {
-  margin-top: 0.5rem;
+  margin-top: 0.4rem;
   max-width: 19vw;
   min-width: 19vw;
   display: flex;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
   justify-content: end;
 }
 
@@ -314,12 +336,13 @@ body {
 
 .globoYo {
   align-self: flex-end;
-  background-color: rgb(145, 235, 145);
+  background: linear-gradient(135deg, #6df2b1, #6bc4ff);
+  color: #0b1320;
 }
 
 .globoOtro {
   align-self: flex-start;
-  background-color: rgb(116, 255, 255);
+  background-color: rgba(255, 255, 255, 0.14);
 }
 
 /* Nuevo chat */
@@ -337,37 +360,37 @@ body {
 }
 
 .contenedorForm button {
-  height: 6rem;
-  width: 6rem;
-  font-size: x-large;
-  color: white;
+  height: 4.8rem;
+  width: 4.8rem;
+  font-size: 1.2rem;
+  color: #0b1320;
   border: none;
   margin-right: 0.5rem;
-  background-color: rgba(76, 74, 184, 0.781);
-  box-shadow: 0px 5px 10px rgb(77, 66, 139);
+  background: linear-gradient(135deg, #6bc4ff, #6df2b1);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.25);
   border-radius: 100%;
 }
 
 .contenedorForm button:hover {
-  background-color: rgba(76, 74, 184, 0.9);
-  box-shadow: 0px 5px 15px rgba(77, 66, 139, 0.6);
+  filter: brightness(1.05);
+  box-shadow: 0 16px 26px rgba(0, 0, 0, 0.3);
 }
 
 .newChat {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Outfit", "Space Grotesk", Arial, Helvetica, sans-serif;
   color: white;
   width: 90%;
   min-height: 5vh;
   max-height: 25vh;
   resize: none;
   overflow-y: auto;
-  background-color: #f0f0f036;
-  border: none;
-  box-shadow: 0 3px 10px rgb(78, 70, 70);
+  background-color: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04);
   margin: 1rem;
-  font-size: x-large;
+  font-size: 1.05rem;
   padding: 1rem;
-  border-radius: 10px;
+  border-radius: 16px;
   outline: none;
 }
 
